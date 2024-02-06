@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.molgenis</groupId>
+    <artifactId>vip2rdf</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+
+    <name>vip2rdf</name>
+    <description>Converting (part of) a VIP vcf file to a RDF Turtle file</description>
+
+    <licenses>
+        <license>
+            <name>The GNU Lesser General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/molgenis/vip2rdf.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/molgenis/vip2rdf.git</developerConnection>
+        <url>https://github.com/molgenis/vip2rdf</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/molgenis/vip2rdf/issues</url>
+    </issueManagement>
+
+    <properties>
+        <java.version>17</java.version>
+
+        <!-- plugin versions -->
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+
+        <!-- dependency versions -->
+        <opencsv.version>5.7.1</opencsv.version>
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <mockito.version>5.4.0</mockito.version>
+        <htsjdk.version>3.0.5</htsjdk.version>
+        <slf4j.version>2.0.7</slf4j.version>
+        <rdf4j.version>4.3.3</rdf4j.version>
+        <owlapi.version>5.5.0</owlapi.version>
+        <vip.utils.version>1.4.2</vip.utils.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>coverage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.opencsv</groupId>
+                <artifactId>opencsv</artifactId>
+                <version>${opencsv.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.samtools</groupId>
+                <artifactId>htsjdk</artifactId>
+                <version>${htsjdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.rdf4j</groupId>
+                <artifactId>rdf4j-bom</artifactId>
+                <version>${rdf4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.owlapi</groupId>
+                <artifactId>owlapi-distribution</artifactId>
+                <version>${owlapi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.molgenis</groupId>
+                <artifactId>vip-utils</artifactId>
+                <version>${vip.utils.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.samtools</groupId>
+            <artifactId>htsjdk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-rio-turtle</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-distribution</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.molgenis</groupId>
+            <artifactId>vip-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- create fat jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <!-- run shade at package phase -->
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <!-- manifest file adjustments -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <!-- set main class -->
+                                        <Main-Class>org.molgenis.vip2rdf.ValidationToRdfConverter</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                                <!-- prevent license duplications -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+                                <!-- manages META_INF/services/ files for usage in shaded jar -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                                <!-- prevents only single notice being presents and generates an overarching one instead -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer" />
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
