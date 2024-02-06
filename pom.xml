@@ -36,6 +36,8 @@
         <!-- plugin versions -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+        <checksum-maven-plugin.version>1.8</checksum-maven-plugin.version>
         <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
 
@@ -48,134 +50,223 @@
         <rdf4j.version>4.3.3</rdf4j.version>
         <owlapi.version>5.5.0</owlapi.version>
         <vip.utils.version>1.4.2</vip.utils.version>
+
+        <!-- jacoco configuration -->
+        <jacoco.unit-test.destFile>${jacoco.merged-test.fileSetDir}/jacoco-unit-tests.exec</jacoco.unit-test.destFile>
+        <jacoco.unit-test.dataFile>${jacoco.unit-test.destFile}</jacoco.unit-test.dataFile>
+        <jacoco.unit-test.outputDir>${project.reporting.outputDirectory}/jacoco-unit-test-coverage-report</jacoco.unit-test.outputDir>
+
+        <jacoco.integration-test.destFile>${jacoco.merged-test.fileSetDir}/jacoco-integration-tests.exec</jacoco.integration-test.destFile>
+        <jacoco.integration-test.dataFile>${jacoco.integration-test.destFile}</jacoco.integration-test.dataFile>
+        <jacoco.integration-test.outputDir>${project.reporting.outputDirectory}/jacoco-integration-test-coverage-report</jacoco.integration-test.outputDir>
+
+        <jacoco.merged-test.fileSetDir>${project.build.directory}/jacoco-output</jacoco.merged-test.fileSetDir>
+        <jacoco.merged-test.destFile>${jacoco.merged-test.fileSetDir}/jacoco-merged-tests.exec</jacoco.merged-test.destFile>
+        <jacoco.merged-test.dataFile>${jacoco.merged-test.destFile}</jacoco.merged-test.dataFile>
+        <jacoco.merged-test.outputDir>${project.reporting.outputDirectory}/jacoco-merged-test-coverage-report</jacoco.merged-test.outputDir>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>coverage</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jacoco</groupId>
-                        <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>${jacoco-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>prepare-agent</id>
-                                <goals>
-                                    <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>report</id>
-                                <goals>
-                                    <goal>report</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.opencsv</groupId>
-                <artifactId>opencsv</artifactId>
-                <version>${opencsv.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.samtools</groupId>
-                <artifactId>htsjdk</artifactId>
-                <version>${htsjdk.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.rdf4j</groupId>
-                <artifactId>rdf4j-bom</artifactId>
-                <version>${rdf4j.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.sourceforge.owlapi</groupId>
-                <artifactId>owlapi-distribution</artifactId>
-                <version>${owlapi.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.molgenis</groupId>
-                <artifactId>vip-utils</artifactId>
-                <version>${vip.utils.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.samtools</groupId>
             <artifactId>htsjdk</artifactId>
+            <version>${htsjdk.version}</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.rdf4j</groupId>
-            <artifactId>rdf4j-rio-turtle</artifactId>
+            <artifactId>rdf4j-bom</artifactId>
+            <version>${rdf4j.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-distribution</artifactId>
+            <version>${owlapi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.molgenis</groupId>
             <artifactId>vip-utils</artifactId>
+            <version>${vip.utils.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- define java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerArguments>
+                        <Xlint />
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+
+
+            <!-- checksum creation -->
+            <plugin>
+                <groupId>net.nicoulaj.maven.plugins</groupId>
+                <artifactId>checksum-maven-plugin</artifactId>
+                <version>${checksum-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>artifacts</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <algorithms>
+                        <!-- see: https://en.wikipedia.org/wiki/Secure_Hash_Algorithms -->
+                        <algorithm>MD5</algorithm>
+                        <algorithm>SHA-256</algorithm>
+                        <algorithm>SHA-512</algorithm>
+                        <algorithm>SHA3-512</algorithm>
+                    </algorithms>
+                    <!-- dir for individual files -->
+                    <individualFilesOutputDirectory>checksums</individualFilesOutputDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- unit testing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+            <!-- integration testing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- JAva COde COverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <!-- unit tests -->
+                    <execution>
+                        <id>pre-unit-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <destFile>${jacoco.unit-test.destFile}</destFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${jacoco.unit-test.dataFile}</dataFile>
+                            <outputDirectory>${jacoco.unit-test.outputDir}</outputDirectory>
+                        </configuration>
+                    </execution>
+
+                    <!-- integration tests -->
+                    <execution>
+                        <id>pre-integration-test</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <destFile>${jacoco.integration-test.destFile}</destFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${jacoco.integration-test.dataFile}</dataFile>
+                            <outputDirectory>${jacoco.integration-test.outputDir}</outputDirectory>
+                        </configuration>
+                    </execution>
+
+                    <!-- tests combined -->
+<!--                    <execution>-->
+<!--                        <id>merge-unit-and-integration</id>-->
+<!--                        <phase>post-integration-test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>merge</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <fileSets>-->
+<!--                                <fileSet>-->
+<!--                                    <directory>${jacoco.merged-test.fileSetDir}</directory>-->
+<!--                                    <includes>-->
+<!--                                        <include>*.exec</include>-->
+<!--                                    </includes>-->
+<!--                                </fileSet>-->
+<!--                            </fileSets>-->
+<!--                            <destFile>${jacoco.merged-test.destFile}</destFile>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>create-merged-report</id>-->
+<!--                        <phase>post-integration-test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>report</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <dataFile>${jacoco.merged-test.dataFile}</dataFile>-->
+<!--                            <outputDirectory>${jacoco.merged-test.outputDir}</outputDirectory>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+                </executions>
+            </plugin>
+
             <!-- create fat jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -210,5 +301,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
