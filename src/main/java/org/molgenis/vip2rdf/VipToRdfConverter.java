@@ -24,8 +24,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Set;
 
-public class ValidationToRdfConverter {
-    private static final Logger logger = LoggerFactory.getLogger(ValidationToRdfConverter.class);
+public class VipToRdfConverter {
+    private static final Logger logger = LoggerFactory.getLogger(VipToRdfConverter.class);
     /**
      * [0] vip.vcf.gz
      * [1] sample_sheet.csv
