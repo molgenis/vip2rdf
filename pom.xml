@@ -103,6 +103,12 @@
             <groupId>org.molgenis</groupId>
             <artifactId>vip-utils</artifactId>
             <version>${vip.utils.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
