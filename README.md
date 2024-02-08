@@ -89,7 +89,24 @@ flowchart LR
     end
     style legend fill:none,stroke:#000000
 ```
+
 Note: every unique subject has an `rdfs:label "<label>"`. The diagram only explicitly mentions the cases where the `rdfs:label` contains information that is not very similar to the IRI itself (f.e. a gene ID IRI but the symbol as label).
+
+### Namespace usage 
+
+| Prefix   | Namespace                                        | Usage                                                                                                                         |
+|----------|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| rdf      | http://www.w3.org/1999/02/22-rdf-syntax-ns#      | Generic rdf namespace                                                                                                         |
+| rdfs     | http://www.w3.org/2000/01/rdf-schema#            | Generic rdfs namespace                                                                                                        |
+| dcterms  | http://purl.org/dc/terms/                        | Description predicate for longer name than rdfs:label where needed                                                            |
+| obo      | http://purl.obolibrary.org/obo/                  | Sequence ontology (`SO_<number>`) \& HPO (`HP_<number>`) IRIs                                                                  |
+| sio      | http://semanticscience.org/resource/             | All kinds of IRIs to describe data (predicates \& rdf:type objects)                                                           |
+| ncbigene | http://identifiers.org/ncbigene/                 | NCBI Gene ID IRIs                                                                                                             |
+| refseq   | http://identifiers.org/refseq/                   | NCBI Reference Sequences IRIs                                                                                                 |
+| ensembl  | http://ensembl.org/glossary/                     | Using the Ensembl glossary, String-formatted VEP data in the VIP output is converted to their corresponding semantic web IRIs |
+| vip      | `urn:uuid:E4CBEA11-46B8-4B68-A202-B9FC8E5BE255#` | General IRIs specific for this project                                                                                        |
+|          | `urn:uuid:[output file specific UUID]#`          | Patients/variants/transcripts specific for a single generated turtle output file                                              |
+
 
 ## F.A.Q.
 
