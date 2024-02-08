@@ -10,6 +10,12 @@ Converting (a part of) VIP vcf files into RDF Turtle files.
 
 \* = Currently outdated, see F.A.Q. in case of errors.
 
+## Usage
+
+```bash
+java -jar vip2rdf.jar input.vcf.gz samplesheet.tsv ensembl-glossary.owl hp.owl output.ttl
+```
+
 ## Regarding the RDF files
 
 An uuid was created for defining terms within the generated files: `urn:uuid:E4CBEA11-46B8-4B68-A202-B9FC8E5BE255#`
