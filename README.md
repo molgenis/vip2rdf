@@ -5,8 +5,10 @@ Converting (a part of) VIP vcf files into RDF Turtle files.
 ## Requirements
 
 * Java 17+
-* [Ensembl glossary (.owl)](https://raw.githubusercontent.com/Ensembl/ensembl-glossary/93c46f58299411f3b7d76c040b9cb73e907084a2/ensembl-glossary.owl) - currently outdated, see F.A.Q. in case of errors
-* [Human Phenotype Ontology (.owl)](https://github.com/obophenotype/human-phenotype-ontology/releases/latest/download/hp.owl)
+* [Ensembl glossary (.owl)](https://raw.githubusercontent.com/Ensembl/ensembl-glossary/93c46f58299411f3b7d76c040b9cb73e907084a2/ensembl-glossary.owl) * - [license](https://www.ensembl.org/info/about/legal/disclaimer.html)
+* [Human Phenotype Ontology (.owl)](https://github.com/obophenotype/human-phenotype-ontology/releases/latest/download/hp.owl) - [license](https://hpo.jax.org/app/license)
+
+\* = Currently outdated, see F.A.Q. in case of errors.
 
 ## Regarding the RDF files
 
