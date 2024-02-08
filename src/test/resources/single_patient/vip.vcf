@@ -1,0 +1,77 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##ALPHSCORE=AlphScore_final scores as described in https://doi.org/10.1093/bioinformatics/btad280
+##ASV_ACMG_class=AnnotSv 'ACMG_class' output.
+##ASV_AnnotSV_ranking_criteria=AnnotSv 'AnnotSV_ranking_criteria' output.
+##ASV_AnnotSV_ranking_score=AnnotSv 'AnnotSV_ranking_score' output.
+##CAPICE_CL=CAPICE classification
+##CAPICE_SC=CAPICE score
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads with MQ=255 or with bad mates are filtered)">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=VI,Number=.,Type=String,Description="An enumeration of possible inheritance modes.">
+##FORMAT=<ID=VIC,Number=1,Type=String,Description="Possible Compound hetrozygote variants.">
+##FORMAT=<ID=VID,Number=1,Type=Integer,Description="De novo variant.">
+##FORMAT=<ID=VIG,Number=.,Type=String,Description="Genes with an inheritance match.">
+##FORMAT=<ID=VIM,Number=1,Type=Integer,Description="Inheritance Match: Genotypes, affected statuses and known gene inheritance patterns match.">
+##FORMAT=<ID=VIPC_S,Number=.,Type=String,Description="VIP decision tree classification.">
+##FORMAT=<ID=VIPP_S,Number=.,Type=String,Description="VIP decision tree path.">
+##FORMAT=<ID=VIS,Number=.,Type=String,Description="An enumeration of possible sub inheritance modes like e.g. compound, non penetrance.">
+##GADO_PD=The GADO predicion for the relation between the phenotypes and the gene, HC: high confidence, LC: low confidence.
+##GADO_SC=The combined prioritization GADO Z-score over the supplied HPO terms for this case.
+##Grantham=Grantham Matrix score - Grantham, R. Amino Acid Difference Formula to Help Explain Protein Evolution, Science 1974 Sep 6;185(4154):862-4.
+##HPO=List of HPO terms for the gene, based on  '/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/hpo_20230822.tsv'
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|EXON|INTRON|HGVSc|HGVSp|cDNA_position|CDS_position|Protein_position|Amino_acids|Codons|Existing_variation|ALLELE_NUM|DISTANCE|STRAND|FLAGS|PICK|SYMBOL_SOURCE|HGNC_ID|REFSEQ_MATCH|REFSEQ_OFFSET|SOURCE|SIFT|PolyPhen|HGVS_OFFSET|CLIN_SIG|SOMATIC|PHENO|PUBMED|CHECK_REF|MOTIF_NAME|MOTIF_POS|HIGH_INF_POS|MOTIF_SCORE_CHANGE|TRANSCRIPTION_FACTORS|Grantham|SpliceAI_pred_DP_AG|SpliceAI_pred_DP_AL|SpliceAI_pred_DP_DG|SpliceAI_pred_DP_DL|SpliceAI_pred_DS_AG|SpliceAI_pred_DS_AL|SpliceAI_pred_DS_DG|SpliceAI_pred_DS_DL|SpliceAI_pred_SYMBOL|CAPICE_CL|CAPICE_SC|existing_InFrame_oORFs|existing_OutOfFrame_oORFs|existing_uORFs|five_prime_UTR_variant_annotation|five_prime_UTR_variant_consequence|HPO|GADO_PD|GADO_SC|IncompletePenetrance|InheritanceModesGene|VKGL|VKGL_CL|gnomAD_AF|gnomAD_HN|clinVar_CLNID|clinVar_CLNREVSTAT|clinVar_CLNSIG|clinVar_CLNSIGINCL|ASV_ACMG_class|ASV_AnnotSV_ranking_criteria|ASV_AnnotSV_ranking_score|ALPHSCORE|ncER|phyloP|VIPC|VIPP">
+##INFO=<ID=Disease,Number=1,Type=String,Description="Associated disorder">
+##INFO=<ID=DisplayRU,Number=1,Type=String,Description="Display repeat unit familiar to clinician">
+##INFO=<ID=HGNCId,Number=1,Type=Integer,Description="HGNC gene id for associated disease gene">
+##INFO=<ID=InheritanceMode,Number=1,Type=String,Description="Main mode of inheritance for disorder">
+##INFO=<ID=RankScore,Number=1,Type=String,Description="RankScore for variant in this family as family(str):score(int)">
+##INFO=<ID=STR_NORMAL_MAX,Number=1,Type=Integer,Description="Max number of repeats allowed to call as normal">
+##INFO=<ID=STR_PATHOLOGIC_MIN,Number=1,Type=Integer,Description="Min number of repeats required to call as pathologic">
+##INFO=<ID=STR_STATUS,Number=A,Type=String,Description="Repeat expansion status. Alternatives in [normal, pre_mutation, full_mutation]">
+##INFO=<ID=Source,Number=1,Type=String,Description="Source collection for variant definition">
+##INFO=<ID=SourceDisplay,Number=1,Type=String,Description="Source for variant definition, display">
+##INFO=<ID=SourceId,Number=1,Type=String,Description="Source id for variant definition">
+##INFO=<ID=SweGenMean,Number=1,Type=Float,Description="Average number of repeat unit copies in population">
+##INFO=<ID=SweGenStd,Number=1,Type=Float,Description="Standard deviation of number of repeat unit copies in population">
+##INFO=<ID=VIPC_S,Number=.,Type=String,Description="VIP decision tree classification (samples).">
+##INFO=<ID=phyloP,Number=.,Type=String,Description="/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/GRCh38/hg38.phyloP100way.bed.gz">
+##IncompletePenetrance=Boolean indicating if the gene is known for incomplete penetrance, based on  '/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/inheritance_20230608.tsv' .
+##InheritanceModesGene=List of inheritance modes for the gene, based on  '/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/inheritance_20230608.tsv'
+##SpliceAI_pred_DP_AG=SpliceAI predicted effect on splicing. Delta position for acceptor gain
+##SpliceAI_pred_DP_AL=SpliceAI predicted effect on splicing. Delta position for acceptor loss
+##SpliceAI_pred_DP_DG=SpliceAI predicted effect on splicing. Delta position for donor gain
+##SpliceAI_pred_DP_DL=SpliceAI predicted effect on splicing. Delta position for donor loss
+##SpliceAI_pred_DS_AG=SpliceAI predicted effect on splicing. Delta score for acceptor gain
+##SpliceAI_pred_DS_AL=SpliceAI predicted effect on splicing. Delta score for acceptor loss
+##SpliceAI_pred_DS_DG=SpliceAI predicted effect on splicing. Delta score for donor gain
+##SpliceAI_pred_DS_DL=SpliceAI predicted effect on splicing. Delta score for donor loss
+##SpliceAI_pred_SYMBOL=SpliceAI gene symbol
+##VEP-command-line='vep --allele_number --allow_non_variant --assembly GRCh38 --buffer_size 1000 --cache --compress_output bgzip --custom [PATH]/hg38.phyloP100way.bed.gz,phyloP,bed,exact,0 --database 0 --dir_cache [PATH]/cache --dir_plugins [PATH]/plugins --dont_skip --exclude_predicted --fasta [PATH]/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz --flag_pick_allele --fork 4 --format vcf --hgvs --input_file vip_normalized.vcf.gz --no_stats --numbers --offline --output_file vip_annotated.vcf.gz --plugin [PATH]/GRCh38_ncER_perc.bed.gz --polyphen s --pubmed --refseq --safe --shift_3prime --sift s --symbol --total_length --use_given_ref --vcf'
+##VEP="v109" time="2023-11-09 09:27:05" cache="/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/vep/cache/homo_sapiens_refseq/109_GRCh38" ensembl=109.10baaec ensembl-variation=109.18a12b6 ensembl-funcgen=109.cba2db8 ensembl-io=109.4946a86 1000genomes="phase3" COSMIC="96" ClinVar="202209" HGMD-PUBLIC="20204" assembly="GRCh38.p13" dbSNP="154" gencode="GENCODE 43" genebuild="2014-07" gnomADe="r2.1.1" gnomADg="v3.1.2" polyphen="2.2.3" refseq="110 - GCF_000001405.40_GRCh38.p14_genomic.gff" regbuild="1.0" sift="6.2.1"
+##VIPC=VIP decision tree classification
+##VIPP=VIP decision tree path (ampersand separated)
+##VIP_treeCommand=--input vip_annotated.vcf.gz --config /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/decision_tree_GRCh38.json --path --output vip_classified.vcf.gz
+##VIP_treeVersion=3.8.0
+##VKGL=file:/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/resources/GRCh38/vkgl_consensus_20230701.tsv'
+##VKGL_CL=VKGL consensus variant classification.
+##clinVar_CLNID=ClinVar variation identifier
+##clinVar_CLNREVSTAT=ClinVar review status for the Variation ID
+##clinVar_CLNSIG=Clinical significance for this single variant; multiple values are separated by a vertical bar
+##clinVar_CLNSIGINCL=Clinical significance for a haplotype or genotype that includes this variant. Reported as pairs of VariationID:clinical significance; multiple values are separated by a vertical bar
+##contig=<ID=chr22,length=50818468>
+##existing_InFrame_oORFs=The number of existing inFrame overlapping ORFs (inFrame oORF) at the 5 prime UTR
+##existing_OutOfFrame_oORFs=The number of existing out-of-frame overlapping ORFs (OutOfFrame oORF) at the 5 prime UTR
+##existing_uORFs=The number of existing uORFs with a stop codon within the 5 prime UTR
+##five_prime_UTR_variant_annotation=Output the annotation of a given 5 prime UTR variant
+##five_prime_UTR_variant_consequence=Output the variant consequences of a given 5 prime UTR variant: uAUG_gained, uAUG_lost, uSTOP_lost or uFrameshift
+##gnomAD_AF=gnomAD allele frequency
+##gnomAD_HN=gnomAD number of homozygotes
+##ncER=ncER (https://www.nature.com/articles/s41467-019-13212-3) scores. This indicates the likelyhood of a location being essential in terms of regulation.
+##VIP_Version=6.2.0
+##VIP_Command=nextflow -C /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/config/nxf_vcf.config,/groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/suites/vcf/resources/snv_proband_trio.cfg -log /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/output/vcf/snv_proband_trio/.nxf.log run /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/vip_vcf.nf -offline -profile slurm -with-report /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/output/vcf/snv_proband_trio/nxf_report.html -with-timeline /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/output/vcf/snv_proband_trio/nxf_timeline.html --input /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/suites/vcf/resources/snv_proband_trio.tsv --output /groups/solve-rd/tmp10/projects/vip_dev/fastq/bcharbon/vip/test/output/vcf/snv_proband_trio -resume
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	PROBAND0
+chr22	19134440	chr22_19134440_G_T	G	T	11	PASS	CSQ=T|missense_variant|MODERATE|ESS2|8220|Transcript|NM_022719.3|protein_coding|10/10||NM_022719.3:c.1187C>A|NP_073210.1:p.Pro396Gln|1198/5359|1187/1431|396/476|P/Q|cCa/cAa|COSV52817063|1||-1||1|EntrezGene|||||0|0.99|||1|1||||||||76|21|-3|35|-16|0.00|0.00|0.00|0.00|DGCR14|VUS|0.82256454||||||||-0.121|||||||||||||||90.0557|9.374000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&utr5&capice&exit_lp,T|downstream_gene_variant|MODIFIER|TSSK2|23617|Transcript|NM_053006.5|protein_coding||||||||||COSV52817063|1|1818|1|||EntrezGene|||||||||1|1|||||||||21|-3|35|-16|0.00|0.00|0.00|0.00|DGCR14|VUS|0.76475006||||||||1.06|||||||||||||||90.0557|9.374000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&utr5&capice&exit_lp,T|non_coding_transcript_exon_variant|MODIFIER|ESS2|8220|Transcript|NR_134304.2|misc_RNA|10/10||NR_134304.2:n.1275C>A||1275/5436|||||COSV52817063|1||-1|||EntrezGene|||||||||1|1|||||||||21|-3|35|-16|0.00|0.00|0.00|0.00|DGCR14|VUS|0.89557093||||||||-0.121|||||||||||||||90.0557|9.374000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&utr5&capice&exit_lp;VIPC_S=U2	GT:AD:DP:VI:VID:VIPC_S:VIPP_S	1/1:0,50:50:AR:0:U2,U2,U2:gt&gq&dp&vim&exit_u2,gt&gq&dp&vim&exit_u2,gt&gq&dp&vim&exit_u2
+chr22	19253958	chr22_19253958_C_A	C	A	11	PASS	CSQ=A|splice_donor_variant|HIGH|CLTCL1|8218|Transcript|NM_001835.4|protein_coding||3/31|NM_001835.4:c.519+1G>T||||||||1||-1|||EntrezGene|||||||||||||||||||2|33|2|1|0.00|0.00|0.12|1.00|CLTCL1|VUS|0.99721116||||||HP:0001250||-0.44|||||||||||||||97.2372|5.517000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp,A|splice_donor_variant|HIGH|CLTCL1|8218|Transcript|NM_007098.4|protein_coding||3/32|NM_007098.4:c.519+1G>T||||||||1||-1||1|EntrezGene|||||||||||||||||||2|33|2|1|0.00|0.00|0.12|1.00|CLTCL1|VUS|0.99721116||||||HP:0001250||-0.44|||||||||||||||97.2372|5.517000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp;VIPC_S=U2	GT:AD:DP:VI:VID:VIPC_S:VIPP_S	1/1:0,50:50:AR:0:U2,U2:gt&gq&dp&vim&exit_u2,gt&gq&dp&vim&exit_u2
+chr22	19718955	chr22_19718955_C_A	C	A	10	PASS	CSQ=A|upstream_gene_variant|MODIFIER|GP1BB|2812|Transcript|NM_000407.5|protein_coding|||||||||||1|4584|1|||EntrezGene|||||||||||||||||||-13|-2|-3|12|0.02|0.00|0.46|0.00|SEPT5|VUS|0.3075224||||||HP:0001166&HP:0001250||-0.421||AR|||||||||||||90.0613|-0.270000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp,A|intron_variant|MODIFIER|SEPTIN5|5413|Transcript|NM_001009939.3|protein_coding||1/10|NM_001009939.3:c.81+137C>A||||||||1||1|||EntrezGene|||||||||||||||||||-13|-2|-3|12|0.02|0.00|0.46|0.00|SEPT5|VUS|0.3338875||||||||0.869|||||||||||||||90.0613|-0.270000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp,A|intron_variant|MODIFIER|SEPTIN5|5413|Transcript|NM_002688.6|protein_coding||2/11|NM_002688.6:c.55-647C>A||||||||1||1||1|EntrezGene|||||||||||||||||||-13|-2|-3|12|0.02|0.00|0.46|0.00|SEPT5|VUS|0.3338875||||||||0.869|||||||||||||||90.0613|-0.270000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp,A|intron_variant&non_coding_transcript_variant|MODIFIER|SEPT5-GP1BB|100526833|Transcript|NR_037611.1|lncRNA||1/11|NR_037611.1:n.1599+137C>A||||||||1||1|||EntrezGene|||||||||||||||||||-13|-2|-3|12|0.02|0.00|0.46|0.00|SEPT5|VUS|0.5126284|||||||||||||||||||||||90.0613|-0.270000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp,A|intron_variant&non_coding_transcript_variant|MODIFIER|SEPT5-GP1BB|100526833|Transcript|NR_037612.1|lncRNA||1/11|NR_037612.1:n.103+384C>A||||||||1||1|||EntrezGene|||||||||||||||||||-13|-2|-3|12|0.02|0.00|0.46|0.00|SEPT5|VUS|0.5126284|||||||||||||||||||||||90.0613|-0.270000|LP|chrom&gene&filter&vkgl&clinVar&gnomAD&sv&spliceAI&exit_lp;VIPC_S=U1	GT:AD:DP:VI:VID:VIG:VIM:VIPC_S:VIPP_S	1/1:0,50:50:AR:0:2812:1:U1,U1,U1,U1,U1:gt&gq&dp&vim&exit_u1,gt&gq&dp&vim&exit_u1,gt&gq&dp&vim&exit_u1,gt&gq&dp&vim&exit_u1,gt&gq&dp&vim&exit_u1

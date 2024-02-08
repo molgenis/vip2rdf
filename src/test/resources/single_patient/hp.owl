@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/hp.owl#"
+     xml:base="http://purl.obolibrary.org/obo/hp.owl"
+     xmlns:cl="http://purl.obolibrary.org/obo/cl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:go="http://purl.obolibrary.org/obo/go#"
+     xmlns:hp="http://purl.obolibrary.org/obo/hp#"
+     xmlns:pr="http://purl.obolibrary.org/obo/pr#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:obo2="http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/"
+     xmlns:pato="http://purl.obolibrary.org/obo/pato#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/chebi/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:vocab="https://w3id.org/semapv/vocab/"
+     xmlns:chebi1="http://purl.obolibrary.org/obo/chebi#"
+     xmlns:chebi3="http://purl.obolibrary.org/obo/chebi#2"
+     xmlns:chebi4="http://purl.obolibrary.org/obo/chebi#3"
+     xmlns:chebi5="http://purl.obolibrary.org/obo/chebi#1"
+     xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
+     xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:caloha-reqs-vetted="http://purl.obolibrary.org/obo/caloha-reqs-vetted#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2023-07-21/hp.owl"/>
+        <obo:IAO_0000700 rdf:resource="http://purl.obolibrary.org/obo/HP_0000001"/>
+        <dc:creator>Human Phenotype Ontology Consortium</dc:creator>
+        <dc:creator>Monarch Initiative</dc:creator>
+        <dc:creator>Peter Robinson</dc:creator>
+        <dc:creator>Sebastian Köhler</dc:creator>
+        <dc:description>The Human Phenotype Ontology (HPO) provides a standardized vocabulary of phenotypic abnormalities and clinical features encountered in human disease.</dc:description>
+        <dc:rights>Peter Robinson, Sebastian Koehler, The Human Phenotype Ontology Consortium, and The Monarch Initiative</dc:rights>
+        <dc:subject>Phenotypic abnormalities encountered in human disease</dc:subject>
+        <dc:title>Human Phenotype Ontology</dc:title>
+        <dcterms:license rdf:resource="https://hpo.jax.org/app/license"/>
+        <oboInOwl:default-namespace>human_phenotype</oboInOwl:default-namespace>
+        <oboInOwl:logical-definition-view-relation>has_part</oboInOwl:logical-definition-view-relation>
+        <rdfs:comment>Please see license of HPO at http://www.human-phenotype-ontology.org</rdfs:comment>
+    </owl:Ontology>
+
+    <!-- http://purl.obolibrary.org/obo/HP_0001166 -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001166">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001238"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0100807"/>
+        <obo:IAO_0000115>Abnormally long and slender fingers (&quot;spider fingers&quot;).</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId>HP:0001505</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasDbXref>MSH:D054119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:62250003</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C0003706</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Long slender fingers</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Long, slender fingers</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Spider fingers</oboInOwl:hasExactSynonym>
+        <oboInOwl:id>HP:0001166</oboInOwl:id>
+        <rdfs:label>Arachnodactyly</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001166"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Abnormally long and slender fingers (&quot;spider fingers&quot;).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-0736-9199"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001166"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Long slender fingers</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001166"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Spider fingers</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp#layperson"/>
+    </owl:Axiom>
+
+    <!-- http://purl.obolibrary.org/obo/HP_0001250 -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001250">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012638"/>
+        <obo:IAO_0000115>A seizure is an intermittent abnormality of nervous system physiology characterised by a transient occurrence of signs and/or symptoms due to abnormal excessive or synchronous neuronal activity in the brain.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId>HP:0001275</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0001303</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002125</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002182</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002279</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002306</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002348</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002391</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002417</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002430</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002431</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002432</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002434</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002437</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002466</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002479</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0002794</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0006997</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0010520</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasDbXref>MSH:D004827</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MSH:D012640</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:128613002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:246545002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:313307000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:84757009</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:91175000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C0014544</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C0036572</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Epileptic seizure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Seizures</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Epilepsy</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>HP:0001250</oboInOwl:id>
+        <rdfs:comment>A type of electrographic seizure has been proposed in neonates which does not have a clinical correlate, it is electrographic only. The term epilepsy is not used to describe recurrent febrile seizures. Epilepsy presumably reflects an abnormally reduced seizure threshold.</rdfs:comment>
+        <rdfs:label>Seizure</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001250"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A seizure is an intermittent abnormality of nervous system physiology characterised by a transient occurrence of signs and/or symptoms due to abnormal excessive or synchronous neuronal activity in the brain.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-0736-9199"/>
+        <oboInOwl:hasDbXref>PMID:15816939</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001250"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Seizures</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp#layperson"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp#plural_form"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001250"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Epilepsy</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp#layperson"/>
+    </owl:Axiom>
+</rdf:RDF>

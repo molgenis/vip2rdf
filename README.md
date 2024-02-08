@@ -162,3 +162,7 @@ contain the following:
    </servers>
 </settings>
 ```
+
+### Testing data
+
+See [this README](./src/test/resources/README.md) for information about the test files used for integration testing.

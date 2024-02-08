@@ -235,35 +235,35 @@
                     </execution>
 
                     <!-- tests combined -->
-<!--                    <execution>-->
-<!--                        <id>merge-unit-and-integration</id>-->
-<!--                        <phase>post-integration-test</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>merge</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <fileSets>-->
-<!--                                <fileSet>-->
-<!--                                    <directory>${jacoco.merged-test.fileSetDir}</directory>-->
-<!--                                    <includes>-->
-<!--                                        <include>*.exec</include>-->
-<!--                                    </includes>-->
-<!--                                </fileSet>-->
-<!--                            </fileSets>-->
-<!--                            <destFile>${jacoco.merged-test.destFile}</destFile>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>create-merged-report</id>-->
-<!--                        <phase>post-integration-test</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>report</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <dataFile>${jacoco.merged-test.dataFile}</dataFile>-->
-<!--                            <outputDirectory>${jacoco.merged-test.outputDir}</outputDirectory>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
+                    <execution>
+                        <id>merge-unit-and-integration</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>merge</goal>
+                        </goals>
+                        <configuration>
+                            <fileSets>
+                                <fileSet>
+                                    <directory>${jacoco.merged-test.fileSetDir}</directory>
+                                    <includes>
+                                        <include>*.exec</include>
+                                    </includes>
+                                </fileSet>
+                            </fileSets>
+                            <destFile>${jacoco.merged-test.destFile}</destFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>create-merged-report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${jacoco.merged-test.dataFile}</dataFile>
+                            <outputDirectory>${jacoco.merged-test.outputDir}</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 

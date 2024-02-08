@@ -1,0 +1,203 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix hgnc: <http://identifiers.org/hgnc.symbol/> .
+@prefix ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix refseq: <http://identifiers.org/refseq/> .
+@prefix ensembl: <http://ensembl.org/glossary/> .
+@prefix vip: <urn:uuid:E4CBEA11-46B8-4B68-A202-B9FC8E5BE255#> .
+@prefix : <urn:uuid:cb173486-ccdd-4713-9dc1-2803ac63af9d#> .
+
+# VIP VCF - RDF generics
+vip:chrom rdfs:label "chromosome" .
+vip:pos rdfs:label "position" .
+vip:id rdfs:label "id" .
+vip:ref rdfs:label "ref" .
+vip:alt rdfs:label "alt" .
+vip:gene rdfs:label "gene" .
+vip:consequence rdfs:label "consequence" .
+vip:vipc rdfs:label "classification" .
+vip:has-variant rdfs:label "has variant" .
+vip:has-transcript rdfs:label "has transcript" .
+vip:has-feature rdfs:label "has feature" .
+
+# VIP VCF - classification
+vip:vipc-lb rdfs:label "LB" ;
+    dcterms:description "Likely benign" .
+vip:vipc-b rdfs:label "B" ;
+    dcterms:description "Benign" .
+vip:vipc-vus rdfs:label "VUS" ;
+    dcterms:description "Variant of uncertain significance" .
+vip:vipc-lp rdfs:label "LP" ;
+    dcterms:description "Likely pathogenic" .
+vip:vipc-p rdfs:label "P" ;
+    dcterms:description "Pathogenic" .
+vip:vipc-lq rdfs:label "LQ" ;
+    dcterms:description "Low quality" .
+
+# General labels for predicates/objects
+sio:SIO_000205 rdfs:label "is represented by" .
+sio:SIO_000393 rdfs:label "patient" .
+sio:SIO_001279 rdfs:label "has phenotype" .
+sio:SIO_001381 rdfs:label "genomic sequence variant" .
+sio:SIO_001383 rdfs:label "gene symbol" .
+sio:SIO_010035 rdfs:label "gene" .
+sio:SIO_010056 rdfs:label "phenotype" .
+sio:SIO_010450 rdfs:label "RNA transcript" .
+
+# Patient data (from patient file)
+:patient-PROBAND0 a sio:SIO_000393 ;
+    rdfs:label "PROBAND0" ;
+	vip:has-variant :variant-1 , :variant-2 , :variant-3 ;
+	sio:SIO_001279 obo:HP_0001166, obo:HP_0001250 .
+
+# Variant data (from vcf file)
+:variant-1 a sio:SIO_001381 ;
+    rdfs:label "variant-1";
+	vip:chrom "chr22" ;
+	vip:pos 19134440 ;
+	vip:id "chr22_19134440_G_T" ;
+	vip:ref "G" ;
+	vip:alt "T" ;
+	vip:has-transcript :transcript-1.1 , :transcript-1.2 , :transcript-1.3 .
+
+:variant-2 a sio:SIO_001381 ;
+    rdfs:label "variant-2";
+	vip:chrom "chr22" ;
+	vip:pos 19253958 ;
+	vip:id "chr22_19253958_C_A" ;
+	vip:ref "C" ;
+	vip:alt "A" ;
+	vip:has-transcript :transcript-2.1 , :transcript-2.2 .
+
+:variant-3 a sio:SIO_001381 ;
+    rdfs:label "variant-3";
+	vip:chrom "chr22" ;
+	vip:pos 19718955 ;
+	vip:id "chr22_19718955_C_A" ;
+	vip:ref "C" ;
+	vip:alt "A" ;
+	vip:has-transcript :transcript-3.1 , :transcript-3.2 , :transcript-3.3 , :transcript-3.4 , :transcript-3.5 .
+
+# Transcript data (from vcf file)
+:transcript-1.1 a sio:SIO_010450 ;
+    rdfs:label "transcript-1.1" ;
+    vip:gene ncbigene:8220 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000150 ;
+    vip:has-feature refseq:NM_022719.3 .
+
+:transcript-1.2 a sio:SIO_010450 ;
+    rdfs:label "transcript-1.2" ;
+    vip:gene ncbigene:23617 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000165 ;
+    vip:has-feature refseq:NM_053006.5 .
+
+:transcript-1.3 a sio:SIO_010450 ;
+    rdfs:label "transcript-1.3" ;
+    vip:gene ncbigene:8220 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000160 ;
+    vip:has-feature refseq:NR_134304.2 .
+
+:transcript-2.1 a sio:SIO_010450 ;
+    rdfs:label "transcript-2.1" ;
+    vip:gene ncbigene:8218 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000142 ;
+    vip:has-feature refseq:NM_001835.4 .
+
+:transcript-2.2 a sio:SIO_010450 ;
+    rdfs:label "transcript-2.2" ;
+    vip:gene ncbigene:8218 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000142 ;
+    vip:has-feature refseq:NM_007098.4 .
+
+:transcript-3.1 a sio:SIO_010450 ;
+    rdfs:label "transcript-3.1" ;
+    vip:gene ncbigene:2812 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000164 ;
+    vip:has-feature refseq:NM_000407.5 .
+
+:transcript-3.2 a sio:SIO_010450 ;
+    rdfs:label "transcript-3.2" ;
+    vip:gene ncbigene:5413 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000161 ;
+    vip:has-feature refseq:NM_001009939.3 .
+
+:transcript-3.3 a sio:SIO_010450 ;
+    rdfs:label "transcript-3.3" ;
+    vip:gene ncbigene:5413 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000161 ;
+    vip:has-feature refseq:NM_002688.6 .
+
+:transcript-3.4 a sio:SIO_010450 ;
+    rdfs:label "transcript-3.4" ;
+    vip:gene ncbigene:100526833 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000161 , ensembl:ENSGLOSSARY_0000163;
+    vip:has-feature refseq:NR_037611.1 .
+
+:transcript-3.5 a sio:SIO_010450 ;
+    rdfs:label "transcript-3.5" ;
+    vip:gene ncbigene:100526833 ;
+    vip:vipc vip:vipc-lp ;
+    vip:consequence ensembl:ENSGLOSSARY_0000161 , ensembl:ENSGLOSSARY_0000163 ;
+    vip:has-feature refseq:NR_037612.1 .
+
+# Gene data (from vcf file)
+ncbigene:2812 a sio:SIO_010035 ;
+    rdfs:label "GP1BB" .
+ncbigene:5413 a sio:SIO_010035 ;
+    rdfs:label "SEPTIN5" .
+ncbigene:8218 a sio:SIO_010035 ;
+    rdfs:label "CLTCL1" .
+ncbigene:8220 a sio:SIO_010035 ;
+    rdfs:label "ESS2" .
+ncbigene:23617 a sio:SIO_010035 ;
+    rdfs:label "TSSK2" .
+ncbigene:100526833 a sio:SIO_010035 ;
+    rdfs:label "SEPT5-GP1BB" .
+
+# Consequence IRIs (from ensembl vocabulary)
+ensembl:ENSGLOSSARY_0000142 rdfs:label "Splice donor variant" ;
+    rdfs:seeAlso obo:SO_0001575 .
+ensembl:ENSGLOSSARY_0000150 rdfs:label "Missense variant" ;
+    rdfs:seeAlso obo:SO_0001583 .
+ensembl:ENSGLOSSARY_0000160 rdfs:label "Non coding transcript exon variant" ;
+    rdfs:seeAlso obo:SO_0001792 .
+ensembl:ENSGLOSSARY_0000161 rdfs:label "Intron variant" ;
+    rdfs:seeAlso obo:SO_0001627 .
+ensembl:ENSGLOSSARY_0000163 rdfs:label "Non coding transcript variant" ;
+    rdfs:seeAlso obo:SO_0001619 .
+ensembl:ENSGLOSSARY_0000164 rdfs:label "Upstream gene variant" ;
+    rdfs:seeAlso obo:SO_0001631 .
+ensembl:ENSGLOSSARY_0000165 rdfs:label "Downstream gene variant" ;
+    rdfs:seeAlso obo:SO_0001632 .
+
+# Phenotype associations (from HPO)
+obo:HP_0001166 a sio:SIO_010056;
+    rdfs:label "Arachnodactyly" ;
+    rdfs:seeAlso <http://bio2rdf.org/umls:C0003706> , <http://linkedlifedata.com/resource/umls/id/C0003706> ,
+    <http://bio2rdf.org/mesh:D054119> , <http://bioportal.bioontology.org/ontologies/MESH/D054119> , <http://id.nlm.nih.gov/mesh/D054119> ,
+    <http://snomed.info/sct/62250003> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/62250003> .
+
+obo:HP_0001250 a sio:SIO_010056;
+    rdfs:label "Seizure" ;
+    rdfs:seeAlso <http://bio2rdf.org/umls:C0014544> , <http://linkedlifedata.com/resource/umls/id/C0014544> ,
+    <http://bio2rdf.org/umls:C0036572> , <http://linkedlifedata.com/resource/umls/id/C0036572> ,
+    <http://bio2rdf.org/mesh:D004827> , <http://bioportal.bioontology.org/ontologies/MESH/D004827> , <http://id.nlm.nih.gov/mesh/D004827> ,
+    <http://bio2rdf.org/mesh:D012640> , <http://bioportal.bioontology.org/ontologies/MESH/D012640> , <http://id.nlm.nih.gov/mesh/D012640> ,
+    <http://snomed.info/sct/128613002> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/128613002> ,
+    <http://snomed.info/sct/246545002> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/246545002> ,
+    <http://snomed.info/sct/313307000> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/313307000> ,
+    <http://snomed.info/sct/84757009> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/84757009> ,
+    <http://snomed.info/sct/91175000> , <http://bioportal.bioontology.org/ontologies/SNOMEDCT/91175000> .

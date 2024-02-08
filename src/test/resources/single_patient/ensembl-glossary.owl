@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/ensembl-glossary.owl#"
+     xml:base="http://purl.obolibrary.org/obo/ensembl-glossary.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:property="http://ensembl.org/glossary/property/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2023-01-04/ensembl-glossary.owl"/>
+        <rdfs:comment>ensembl-glossary</rdfs:comment>
+    </owl:Ontology>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000142 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000142">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A splice variant that changes the 2 base region at the 5&apos; end of an intron</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001575</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Splice donor variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000150 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000150">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001583</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missense variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000160 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000160">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence variant that changes non-coding exon sequence in a non-coding transcript</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001792</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non coding transcript exon variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000161 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000161">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcript variant occurring within an intron</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001627</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intron variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000163 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000163">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcript variant of a non coding RNA gene</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001619</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non coding transcript variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000164 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000164">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence variant located 5&apos; of a gene</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001631</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Upstream gene variant</rdfs:label>
+    </owl:Class>
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000165 -->
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000165">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000134"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/predicted_data.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence variant located 3&apos; of a gene</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001632</oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Downstream gene variant</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
