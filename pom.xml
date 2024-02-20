@@ -6,7 +6,7 @@
 
     <groupId>org.molgenis</groupId>
     <artifactId>vip2rdf</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.0</version>
 
     <name>vip2rdf</name>
     <description>Converting (part of) a VIP vcf file to a RDF Turtle file</description>
