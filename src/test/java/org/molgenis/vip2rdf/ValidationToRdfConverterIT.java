@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.util.UUID;
 
 import static org.mockito.Mockito.*;
-import static org.molgenis.vip2rdf.VipToRdfConverter.processData;
+import static org.molgenis.vip2rdf.VipToRdfCore.processData;
 
 class ValidationToRdfConverterIT {
     @Test
@@ -21,19 +21,17 @@ class ValidationToRdfConverterIT {
         Model expectedModel = Rio.parse(Files.newBufferedReader(TestResourceRetriever.RDF_OUTPUT_TTL.getFullPath()),
                 RDFFormat.TURTLE);
 
-        String[] args = new String[]{
-                TestResourceRetriever.VIP_VCF.getFullPathString(),
-                TestResourceRetriever.SAMPLE_SHEET.getFullPathString(),
-                TestResourceRetriever.ENSEMBL_GLOSSARY.getFullPathString(),
-                TestResourceRetriever.HP_OWL.getFullPathString()
-        };
-
         // Mocking random UUID generation for equal comparison.
         Model actualModel;
         UUID uuid = UUID.fromString("cb173486-ccdd-4713-9dc1-2803ac63af9d");
         try(MockedStatic mock = mockStatic(UUID.class)) {
             mock.when(UUID::randomUUID).thenReturn(uuid);
-            actualModel = processData(args).getModel();
+            actualModel = processData(
+                    TestResourceRetriever.VIP_VCF.getFullPath(),
+                    TestResourceRetriever.SAMPLE_SHEET.getFullPath(),
+                    TestResourceRetriever.ENSEMBL_GLOSSARY.getFullPath(),
+                    TestResourceRetriever.HP_OWL.getFullPath()
+            ).getModel();
         }
 
         // Prints data in expected model not present in actual model

@@ -13,7 +13,7 @@ Converting (a part of) VIP vcf files into RDF Turtle files.
 ## Usage
 
 ```bash
-java -jar vip2rdf.jar input.vcf.gz samplesheet.tsv ensembl-glossary.owl hp.owl output.ttl
+java -jar vip2rdf.jar -i input.vcf.gz -s samplesheet.tsv -e ensembl-glossary.owl -p hp.owl -o output.ttl
 ```
 
 ## Regarding the RDF files
