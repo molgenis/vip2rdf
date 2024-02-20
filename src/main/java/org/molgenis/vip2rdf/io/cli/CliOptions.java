@@ -13,7 +13,7 @@ public class CliOptions {
         return vcfPath;
     }
 
-    @CommandLine.Option(names = {"-i", "--input"}, required = true, paramLabel="VCF FILE",
+    @CommandLine.Option(names = {"-i", "--input"}, required = true, paramLabel="<VCF FILE>",
             description = "The VIP vcf file to be processed")
     public void setVcfPath(Path vcfPath) {
         validateInputFile(vcfPath, ".vcf");
@@ -24,7 +24,7 @@ public class CliOptions {
         return sampleSheetPath;
     }
 
-    @CommandLine.Option(names = {"-s", "--samplesheet"}, required = true, paramLabel="TSV FILE",
+    @CommandLine.Option(names = {"-s", "--samplesheet"}, required = true, paramLabel="<TSV FILE>",
             description = "The VIP samplesheet belonging to the vcf file")
     public void setSampleSheetPath(Path sampleSheetPath) {
         validateInputFile(sampleSheetPath, ".tsv");
@@ -35,7 +35,7 @@ public class CliOptions {
         return ensemblGlossaryPath;
     }
 
-    @CommandLine.Option(names = {"-e", "--ensembl"}, required = true, paramLabel="OWL FILE",
+    @CommandLine.Option(names = {"-e", "--ensembl"}, required = true, paramLabel="<OWL FILE>",
             description = "The Ensembl glossary (.owl) file")
     public void setEnsemblGlossaryPath(Path ensemblGlossaryPath) {
         validateInputFile(ensemblGlossaryPath, ".owl");
@@ -46,7 +46,7 @@ public class CliOptions {
         return hpoOWlPath;
     }
 
-    @CommandLine.Option(names = {"-p", "--hpo"}, required = true, paramLabel="OWL FILE",
+    @CommandLine.Option(names = {"-p", "--hpo"}, required = true, paramLabel="<OWL FILE>",
             description = "The Human Phenotype Ontology (.owl) file")
     public void setHpoOWlPath(Path hpoOWlPath) {
         validateInputFile(hpoOWlPath, ".owl");
@@ -57,7 +57,7 @@ public class CliOptions {
         return outputPath;
     }
 
-    @CommandLine.Option(names = {"-o", "--output"}, required = true, paramLabel="TTL FILE",
+    @CommandLine.Option(names = {"-o", "--output"}, required = true, paramLabel="<TTL FILE>",
             description = "The output file path (.ttl)")
     public void setOutputPath(Path outputPath) {
         validateFileExtension(outputPath, ".ttl");

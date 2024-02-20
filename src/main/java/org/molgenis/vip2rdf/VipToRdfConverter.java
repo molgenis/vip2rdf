@@ -35,17 +35,27 @@ public class VipToRdfConverter {
 
     private static void parseCli(String[] args) {
         CommandLine commandLine = new CommandLine(new VipToRdfConverter());
+        if(args.length == 0) {
+            commandLine.usage(System.out);
+            System.exit(0);
+        }
+
         try {
             commandLine.parseArgs(args);
         } catch (CommandLine.ParameterException e) {
             System.err.println(e.getMessage());
             System.exit(1);
         }
+
         if(commandLine.isUsageHelpRequested()) {
             commandLine.usage(System.out);
             System.exit(0);
         } else if(commandLine.isVersionHelpRequested()) {
-            System.out.println(AppProperties.APP_VERSION.getValue());
+            System.out.println(
+                    String.format("%s %s",
+                            AppProperties.APP_NAME.getValue(),
+                            AppProperties.APP_VERSION.getValue()
+            ));
             System.exit(0);
         }
     }
